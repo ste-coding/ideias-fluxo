@@ -1,0 +1,112 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Jornada Comercial Tera</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: raias verticais, uma por número de WhatsApp (mais raia interna), fluxo de cima para baixo */
+:root{
+ --bg:#F6F7FC;--fg:#172342;--muted:#5B6584;--card:#FFFFFF;--line:#172342;--rule:#DDE2F2;
+ --a-fill:#E3E8FB;--a-str:#02066F;--a-ink:#02066F;--a-on:#FFFFFF;
+ --c-fill:#DDF3E8;--c-str:#17825A;--c-ink:#0A4D33;--c-on:#FFFFFF;
+ --k-fill:#FDEBC8;--k-str:#F5A623;--k-ink:#6B4000;--k-on:#3A2400;
+ --s-fill:#D8F1F4;--s-str:#0B7F8F;--s-ink:#05444D;--s-on:#FFFFFF;
+ --i-fill:#ECEEF5;--i-str:#5E6A8E;--i-ink:#2F3A5C;--i-on:#FFFFFF;
+ --x-fill:#F5F6FB;--x-str:#8A93B0;--x-ink:#3C4566;--x-on:#FFFFFF;
+ --band-a:.42;
+ --display:'Plus Jakarta Sans',system-ui,sans-serif;--body:'IBM Plex Sans',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --bg:#0C1024;--fg:#E6EAFA;--muted:#9AA4C8;--card:#141A38;--line:#AEB8E0;--rule:#27305C;
+ --a-fill:#1A2262;--a-str:#8C9BFF;--a-ink:#DCE2FF;--a-on:#0C1024;
+ --c-fill:#0F3B2B;--c-str:#3FD08F;--c-ink:#CFF5E2;--c-on:#06241A;
+ --k-fill:#47310A;--k-str:#F5A623;--k-ink:#FFE2A8;--k-on:#2A1A00;
+ --s-fill:#0B3A42;--s-str:#4CC9DD;--s-ink:#CDF1F7;--s-on:#06222A;
+ --i-fill:#1D2347;--i-str:#8791BC;--i-ink:#D4DAF2;--i-on:#0C1024;
+ --x-fill:#161B3A;--x-str:#6F7AA6;--x-ink:#C9D0EE;--x-on:#0C1024;
+ --band-a:.34;color-scheme:dark}}
+:root[data-theme="dark"]{
+ --bg:#0C1024;--fg:#E6EAFA;--muted:#9AA4C8;--card:#141A38;--line:#AEB8E0;--rule:#27305C;
+ --a-fill:#1A2262;--a-str:#8C9BFF;--a-ink:#DCE2FF;--a-on:#0C1024;
+ --c-fill:#0F3B2B;--c-str:#3FD08F;--c-ink:#CFF5E2;--c-on:#06241A;
+ --k-fill:#47310A;--k-str:#F5A623;--k-ink:#FFE2A8;--k-on:#2A1A00;
+ --s-fill:#0B3A42;--s-str:#4CC9DD;--s-ink:#CDF1F7;--s-on:#06222A;
+ --i-fill:#1D2347;--i-str:#8791BC;--i-ink:#D4DAF2;--i-on:#0C1024;
+ --x-fill:#161B3A;--x-str:#6F7AA6;--x-ink:#C9D0EE;--x-on:#0C1024;
+ --band-a:.34;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55;padding-inline:16px;padding-block:28px 56px}
+.wrap{max-width:1560px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,4vw,38px);line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--display);font-weight:700;font-size:19px;margin:0 0 10px;text-wrap:balance}
+h3{font-family:var(--display);font-weight:700;font-size:15px;margin:0 0 8px}
+.lead{color:var(--muted);max-width:72ch;margin:8px 0 0}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.chip{padding:10px 14px;border-radius:8px;border:1.5px solid;min-width:0}
+.chip b{font-family:var(--display);font-size:14px;display:block}
+.chip span{font-size:13px}
+.chip.c{background:var(--c-fill);border-color:var(--c-str);color:var(--c-ink)}
+.chip.a{background:var(--a-fill);border-color:var(--a-str);color:var(--a-ink)}
+.chip.k{background:var(--k-fill);border-color:var(--k-str);color:var(--k-ink)}
+.chip.s{background:var(--s-fill);border-color:var(--s-str);color:var(--s-ink)}
+.chip.i{background:var(--i-fill);border-color:var(--i-str);color:var(--i-ink)}
+.chip.x{background:var(--x-fill);border-color:var(--x-str);color:var(--x-ink);border-style:dashed}
+.chartbox{overflow-x:auto;border:1px solid var(--rule);border-radius:12px;background:var(--card);padding:12px}
+.chartbox svg{display:block;width:100%;height:auto}
+svg text{font-family:var(--body);text-anchor:middle}
+.band{opacity:var(--band-a)}
+.band.c{fill:var(--c-fill)}.band.a{fill:var(--a-fill)}.band.k{fill:var(--k-fill)}.band.s{fill:var(--s-fill)}.band.i{fill:var(--i-fill)}.band.x{fill:var(--x-fill);stroke:var(--x-str);stroke-dasharray:5 4}
+.hd.c{fill:var(--c-str)}.hd.a{fill:var(--a-str)}.hd.k{fill:var(--k-str)}.hd.s{fill:var(--s-str)}.hd.i{fill:var(--i-str)}.hd.x{fill:var(--x-str)}
+.h1{font-family:var(--display);font-weight:700;font-size:13px}.h2{font-size:10.5px}
+.ch{fill:var(--c-on)}.ah{fill:var(--a-on)}.arw{fill:var(--line)}.kh{fill:var(--k-on)}.sh{fill:var(--s-on)}.ih{fill:var(--i-on)}.xh{fill:var(--x-on)}
+.n{stroke-width:1.8}.n.thick{stroke-width:3.4}
+.n.c{fill:var(--c-fill);stroke:var(--c-str)}.n.a{fill:var(--a-fill);stroke:var(--a-str)}.n.k{fill:var(--k-fill);stroke:var(--k-str)}.n.s{fill:var(--s-fill);stroke:var(--s-str)}.n.i{fill:var(--i-fill);stroke:var(--i-str)}.n.x{fill:var(--x-fill);stroke:var(--x-str)}
+.t1{font-family:var(--display);font-weight:700;font-size:12.5px}.t2{font-size:10.8px}.t3{font-size:10.3px;opacity:.85}
+.ct{fill:var(--c-ink)}.at{fill:var(--a-ink)}.kt{fill:var(--k-ink)}.st{fill:var(--s-ink)}.it{fill:var(--i-ink)}.xt{fill:var(--x-ink)}
+.e{fill:none;stroke:var(--line);stroke-width:1.6}
+.el{font-size:10.5px;font-weight:600;fill:var(--fg);paint-order:stroke;stroke:var(--card);stroke-width:4px}
+.bdg{fill:var(--fg)}.bdgt{font-size:9.5px;font-weight:700;fill:var(--bg);letter-spacing:.02em}
+.hand{stroke:var(--fg);stroke-width:1.2;stroke-dasharray:3 5;opacity:.6}
+.hl{font-size:10.5px;fill:var(--muted);text-anchor:end;font-style:italic;paint-order:stroke;stroke:var(--card);stroke-width:4px}
+.br{fill:none;stroke:var(--muted);stroke-width:1.2}
+.brt{font-size:11px;fill:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.card{border:1px solid var(--rule);background:var(--card);border-radius:12px;padding:18px 20px;min-width:0}
+.card ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
+.card.pro{border-top:3px solid var(--c-str)}.card.con{border-top:3px solid var(--k-str)}
+.fields{display:flex;flex-wrap:wrap;gap:8px}
+.f{border:1px solid var(--rule);border-radius:6px;padding:6px 10px;font-size:13px;background:var(--bg)}
+.f b{display:block;font-weight:600}.f i{font-style:normal;color:var(--muted);font-size:12px}
+.src{color:var(--muted);font-size:12.5px}
+</style>
+<div class="wrap">
+<header>
+<h1>Jornada comercial Tera · como é hoje</h1>
+<p class="lead">Do lead à passagem para o pós-venda. Cada número de WhatsApp tem a sua cor, e as etapas internas ficam em cinza. A etiqueta escura marca onde o cliente troca de número.</p>
+</header>
+<div class="legend">
+<div class="chip c"><b>Verde · Comercial 66-35</b><span>Hoje o SDR e o comercial usam o mesmo número.</span></div>
+<div class="chip k"><b>Laranja · Número de contratos</b><span>Envio formal e lembretes de assinatura.</span></div>
+<div class="chip a"><b>Azul · Atendimento 09-90</b><span>Boas-vindas, aviso de conclusão e dúvidas pós-venda.</span></div>
+<div class="chip i"><b>Cinza · Interno</b><span>Análise, elaboração e operação, sem contato com o cliente.</span></div>
+</div>
+<div class="chartbox"><svg viewBox="0 0 1316 2222" style="min-width:1052px" role="img" aria-label="Fluxograma da jornada"><defs><marker id="arh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="arw"/></marker></defs><rect class="band c" x="40" y="70" width="280" height="2132" rx="10"/><rect class="hd c" x="40" y="12" width="280" height="50" rx="10"/><text class="h1 ch" x="180.0" y="33">Nº Comercial · 66-35</text><text class="h2 ch" x="180.0" y="51">SDR e comercial no mesmo número</text><rect class="band i" x="352" y="70" width="280" height="2132" rx="10"/><rect class="hd i" x="352" y="12" width="280" height="50" rx="10"/><text class="h1 ih" x="492.0" y="33">Interno</text><text class="h2 ih" x="492.0" y="51">Sem contato com o cliente</text><rect class="band k" x="664" y="70" width="280" height="2132" rx="10"/><rect class="hd k" x="664" y="12" width="280" height="50" rx="10"/><text class="h1 kh" x="804.0" y="33">Nº Contratos</text><text class="h2 kh" x="804.0" y="51">Envio e assinatura</text><rect class="band a" x="976" y="70" width="280" height="2132" rx="10"/><rect class="hd a" x="976" y="12" width="280" height="50" rx="10"/><text class="h1 ah" x="1116.0" y="33">Nº Atendimento · 09-90</text><text class="h2 ah" x="1116.0" y="51">Boas-vindas e pós-venda</text><path class="e" d="M180 172 L180 208" marker-end="url(#arh)"/><path class="e" d="M180 280 L180 316" marker-end="url(#arh)"/><path class="e" d="M180 412 L180 484 L364 484" marker-end="url(#arh)"/><text class="el" x="190.0" y="429" style="text-anchor:start">Sim</text><path class="e" d="M52 364 L46 364 L46 244 L52 244" marker-end="url(#arh)"/><text class="el" x="38.0" y="364.0" transform="rotate(-90 38.0 364.0)">Não · nova tentativa do SDR</text><path class="e" d="M308 364 L364 364" marker-end="url(#arh)"/><text class="el" x="336.0" y="357" style="text-anchor:middle">s/ retorno</text><path class="e" d="M492 520 L492 556" marker-end="url(#arh)"/><path class="e" d="M492 628 L492 700 L308 700" marker-end="url(#arh)"/><path class="e" d="M180 736 L180 772" marker-end="url(#arh)"/><path class="e" d="M180 844 L180 880" marker-end="url(#arh)"/><path class="e" d="M308 928 L364 928" marker-end="url(#arh)"/><text class="el" x="336.0" y="921" style="text-anchor:middle">Não</text><path class="e" d="M180 976 L180 1012" marker-end="url(#arh)"/><text class="el" x="190.0" y="993" style="text-anchor:start">Sim</text><path class="e" d="M180 1084 L180 1156 L364 1156" marker-end="url(#arh)"/><path class="e" d="M492 1192 L492 1264 L676 1264" marker-end="url(#arh)"/><path class="e" d="M804 1300 L804 1336" marker-end="url(#arh)"/><path class="e" d="M804 1408 L804 1444" marker-end="url(#arh)"/><path class="e" d="M676 1492 L308 1492" marker-end="url(#arh)"/><text class="el" x="492.0" y="1485" style="text-anchor:middle">Sim</text><path class="e" d="M180 1456 L180 1372 L676 1372" marker-end="url(#arh)"/><text class="el" x="190.0" y="1473" style="text-anchor:start">dúvida resolvida</text><path class="e" d="M804 1540 L804 1612 L620 1612" marker-end="url(#arh)"/><text class="el" x="814.0" y="1557" style="text-anchor:start">Não</text><path class="e" d="M492 1648 L492 1684" marker-end="url(#arh)"/><path class="e" d="M492 1756 L492 1828 L988 1828" marker-end="url(#arh)"/><path class="e" d="M1116 1864 L1116 1936 L620 1936" marker-end="url(#arh)"/><path class="e" d="M492 1972 L492 2044 L988 2044" marker-end="url(#arh)"/><path class="e" d="M1116 2080 L1116 2116" marker-end="url(#arh)"/><rect class="n c" x="52.0" y="100" width="256" height="72" rx="8"/><text class="t1 ct" x="180.0" y="123">1 · Entrada do lead</text><text class="t2 ct" x="180.0" y="141">Instagram, parceria/formulário, site, orgânico</text><text class="t3 ct" x="180.0" y="158">Resp.: SDR · 66-35</text><rect class="n c" x="52.0" y="208" width="256" height="72" rx="8"/><text class="t1 ct" x="180.0" y="231">2 · Em tratativa</text><text class="t2 ct" x="180.0" y="249">Ligação + WhatsApp; pede a conta de energia</text><text class="t3 ct" x="180.0" y="266">Resp.: SDR · 66-35</text><polygon class="n c" points="52.0,364 180.0,316 308.0,364 180.0,412"/><text class="t1 ct" x="180.0" y="361">Conta de energia</text><text class="t1 ct" x="180.0" y="378">recebida?</text><rect class="n i" x="364.0" y="336" width="256" height="56" rx="28"/><text class="t1 it" x="492.0" y="369">Recuperação / Perdido</text><rect class="n i" x="364.0" y="448" width="256" height="72" rx="8"/><text class="t1 it" x="492.0" y="471">3 · Conta recebida / Análise</text><text class="t2 it" x="492.0" y="489">Elegibilidade, economia e atendimento</text><text class="t3 it" x="492.0" y="506">Resp.: André, Cris ou Leticia · CRM</text><rect class="n i" x="364.0" y="556" width="256" height="72" rx="8"/><text class="t1 it" x="492.0" y="579">4 · Proposta em elaboração</text><text class="t2 it" x="492.0" y="597">Criada a partir da conta (etapa interna)</text><text class="t3 it" x="492.0" y="614">Resp.: André, Cris ou Leticia</text><rect class="n c" x="52.0" y="664" width="256" height="72" rx="8"/><text class="t1 ct" x="180.0" y="687">5 · Proposta enviada</text><text class="t2 ct" x="180.0" y="705">Apresentação ao cliente; início da negociação</text><text class="t3 ct" x="180.0" y="722">Resp.: comercial da venda · 66-35</text><rect class="n c" x="52.0" y="772" width="256" height="72" rx="8"/><text class="t1 ct" x="180.0" y="795">6 · Negociação / Aguardando OK</text><text class="t2 ct" x="180.0" y="813">Dúvidas, negociação e decisão</text><text class="t3 ct" x="180.0" y="830">Resp.: comercial · apoio André ou SDR</text><polygon class="n c" points="52.0,928 180.0,880 308.0,928 180.0,976"/><text class="t1 ct" x="180.0" y="925">Cliente deu</text><text class="t1 ct" x="180.0" y="942">OK?</text><rect class="n i" x="364.0" y="900" width="256" height="56" rx="28"/><text class="t1 it" x="492.0" y="933">Recuperação / Perdido</text><rect class="n c" x="52.0" y="1012" width="256" height="72" rx="8"/><text class="t1 ct" x="180.0" y="1035">7 · Contrato: coleta de dados</text><text class="t2 ct" x="180.0" y="1053">Informações necessárias para o contrato</text><text class="t3 ct" x="180.0" y="1070">Resp.: comercial · 66-35</text><rect class="n i" x="364.0" y="1120" width="256" height="72" rx="8"/><text class="t1 it" x="492.0" y="1143">8 · Contrato em elaboração</text><text class="t2 it" x="492.0" y="1161">Dados passados para gerar o contrato</text><text class="t3 it" x="492.0" y="1178">Resp.: André · cliente segue com comercial</text><rect class="n k" x="676.0" y="1228" width="256" height="72" rx="8"/><text class="t1 kt" x="804.0" y="1251">9 · Contrato enviado p/ assinatura</text><text class="t2 kt" x="804.0" y="1269">Envio formal do documento</text><text class="t3 kt" x="804.0" y="1286">Resp.: André ou quem envia · nº contratos</text><rect class="bdg" x="684.0" y="1219" width="193" height="18" rx="9"/><text class="bdgt" x="780" y="1231.5">TROCA DE Nº · 66-35 → CONTRATOS</text><rect class="n k" x="676.0" y="1336" width="256" height="72" rx="8"/><text class="t1 kt" x="804.0" y="1359">10 · Contrato em assinatura</text><text class="t2 kt" x="804.0" y="1377">Lembretes de assinatura</text><text class="t3 kt" x="804.0" y="1394">Dono da venda segue sendo o comercial</text><polygon class="n k" points="676.0,1492 804.0,1444 932.0,1492 804.0,1540"/><text class="t1 kt" x="804.0" y="1489">Cliente tem</text><text class="t1 kt" x="804.0" y="1506">dúvida?</text><rect class="n c" x="52.0" y="1456" width="256" height="72" rx="8"/><text class="t1 ct" x="180.0" y="1479">10 · Dúvida sobre o contrato</text><text class="t2 ct" x="180.0" y="1497">Nº contratos redireciona; comercial responde</text><text class="t3 ct" x="180.0" y="1514">Resp.: comercial · 66-35 (apoio André)</text><rect class="bdg" x="60.0" y="1447" width="193" height="18" rx="9"/><text class="bdgt" x="156" y="1459.5">TROCA DE Nº · CONTRATOS → 66-35</text><rect class="n i" x="364.0" y="1576" width="256" height="72" rx="8" stroke-dasharray="6 4"/><text class="t1 it" x="492.0" y="1599">11 · Assinado / Pré-troca</text><text class="t2 it" x="492.0" y="1617">Preparação da troca de titularidade</text><text class="t3 it" x="492.0" y="1634">Resp.: comercial/operação · canal a definir</text><rect class="n i" x="364.0" y="1684" width="256" height="72" rx="8"/><text class="t1 it" x="492.0" y="1707">12 · Troca de titularidade</text><text class="t2 it" x="492.0" y="1725">Processo de ativação e titularidade</text><text class="t3 it" x="492.0" y="1742">Resp.: operação / pós-venda</text><rect class="n a thick" x="988.0" y="1792" width="256" height="72" rx="8"/><text class="t1 at" x="1116.0" y="1815">13 · Mensagem de boas-vindas</text><text class="t2 at" x="1116.0" y="1833">Primeiro contato do número de atendimento</text><text class="t3 at" x="1116.0" y="1850">Canal: atendimento 09-90</text><rect class="bdg" x="996.0" y="1783" width="136" height="18" rx="9"/><text class="bdgt" x="1064" y="1795.5">TROCA DE Nº · → 09-90</text><rect class="n i" x="364.0" y="1900" width="256" height="72" rx="8"/><text class="t1 it" x="492.0" y="1923">14 · Troca concluída</text><text class="t2 it" x="492.0" y="1941">Titularidade transferida</text><text class="t3 it" x="492.0" y="1958">Resp.: operação / pós-venda</text><rect class="n a thick" x="988.0" y="2008" width="256" height="72" rx="8"/><text class="t1 at" x="1116.0" y="2031">15 · Aviso de conclusão da troca</text><text class="t2 at" x="1116.0" y="2049">Cliente é avisado que a troca terminou</text><text class="t3 at" x="1116.0" y="2066">Canal: atendimento 09-90</text><rect class="n a" x="988.0" y="2116" width="256" height="56" rx="28"/><text class="t1 at" x="1116.0" y="2149">Pós-venda: dúvidas no 09-90</text><line class="hand" x1="40" y1="1666" x2="1256" y2="1666"/><text class="hl" x="1250" y="1659">A partir daqui o cliente fala com o 09-90 · ponto em aberto: momento da passagem formal</text><path class="br" d="M1264 100 H1274 V1648 H1264"/><text class="brt" x="1290" y="874" transform="rotate(90 1290 874)">Dono da venda: comercial responsável (Cris, Leticia ou externo) até a troca de titularidade</text></svg></div>
+<div class="grid">
+<section class="card"><h2>Regras da jornada</h2><ul>
+<li>A troca de número só acontece quando há mudança real de função.</li>
+<li>Elaborar a proposta é etapa interna: o cliente continua no 66-35 com o comercial.</li>
+<li>Quem executa uma tarefa interna (André) não é, por isso, o dono do relacionamento.</li>
+<li>O número de contratos não abre conversa paralela: devolve dúvidas ao 66-35.</li>
+<li>O comercial da venda é o dono do lead até a troca de titularidade.</li>
+<li>Na troca de titularidade o cliente recebe a boas-vindas e o aviso de conclusão do 09-90. Dúvidas posteriores passam a ser atendidas nesse número.</li>
+</ul></section>
+<section class="card"><h2>Campos de responsabilidade no CRM</h2><div class="fields">
+<div class="f"><b>Origem do lead</b><i>Instagram, parceria, site, orgânico, outros</i></div>
+<div class="f"><b>Tipo de comercial</b><i>Interno ou externo</i></div>
+<div class="f"><b>SDR responsável</b><i>Quem faz a tratativa</i></div>
+<div class="f"><b>Comercial responsável</b><i>Cris, Leticia, André ou externo</i></div>
+<div class="f"><b>Responsável pela proposta</b><i>André, Cris ou Leticia</i></div>
+<div class="f"><b>Responsável pelo contrato</b><i>André</i></div>
+</div></section>
+</div>
+<p class="src">No fluxo de hoje o cliente pode trocar de número até três vezes: 66-35 para contratos, contratos de volta ao 66-35 nas dúvidas, e depois para o 09-90. Pontos ainda a definir: canal da etapa 11 e momento exato da passagem de responsabilidade para o pós-venda. Caixas com borda grossa são mensagens enviadas pelo 09-90.</p>
+</div>
+
+</body></html>
